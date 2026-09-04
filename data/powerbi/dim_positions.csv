@@ -1,0 +1,36 @@
+ticker,name,block,asset_class,theme,region,currency,target_weight
+NVDA,NVIDIA Corp,Tech Growth - Core,Equity,AI/Semiconductors,US,USD,0.04
+MSFT,Microsoft Corp,Tech Growth - Core,Equity,Cloud/Software,US,USD,0.04
+GOOGL,Alphabet Inc,Tech Growth - Core,Equity,Cloud/AI,US,USD,0.035
+AMZN,Amazon.com Inc,Tech Growth - Core,Equity,Cloud/E-commerce,US,USD,0.035
+TSM,Taiwan Semiconductor,Tech Growth - Core,Equity,Semiconductors,Asia,USD,0.025
+ASML,ASML Holding,Tech Growth - Core,Equity,Semiconductors,Europe,USD,0.015
+AMD,Advanced Micro Devices,Tech Growth - Core,Equity,Semiconductors,US,USD,0.01
+EQIX,Equinix Inc,Tech Growth - Contorno,Equity,Data Center REIT,US,USD,0.02
+DLR,Digital Realty Trust,Tech Growth - Contorno,Equity,Data Center REIT,US,USD,0.02
+VRT,Vertiv Holdings,Tech Growth - Contorno,Equity,Power & Cooling,US,USD,0.02
+ETN,Eaton Corp,Tech Growth - Contorno,Equity,Infrastructure,US,USD,0.015
+PANW,Palo Alto Networks,Tech Growth - Contorno,Equity,Cybersecurity,US,USD,0.015
+CRWD,CrowdStrike Holdings,Tech Growth - Contorno,Equity,Cybersecurity,US,USD,0.01
+JPM,JPMorgan Chase & Co,Core Diversificato,Equity,Financials,US,USD,0.03
+ALV.DE,Allianz SE,Core Diversificato,Equity,Financials,Europe,EUR,0.02
+SIE.DE,Siemens AG,Core Diversificato,Equity,Industrials,Europe,EUR,0.02
+HON,Honeywell International,Core Diversificato,Equity,Industrials,US,USD,0.02
+JNJ,Johnson & Johnson,Core Diversificato,Equity,Healthcare,US,USD,0.025
+NVO,Novo Nordisk,Core Diversificato,Equity,Healthcare,Europe,USD,0.025
+LDO.MI,Leonardo SpA,Core Diversificato,Equity,Defense,Europe,EUR,0.015
+LMT,Lockheed Martin,Core Diversificato,Equity,Defense,US,USD,0.015
+NOC,Northrop Grumman,Core Diversificato,Equity,Defense,US,USD,0.01
+GD,General Dynamics,Core Diversificato,Equity,Defense,US,USD,0.01
+RTX,RTX Corp,Core Diversificato,Equity,Defense,US,USD,0.01
+ARKX,ARK Space Exploration ETF,Frontiera/Alternativi,Equity,Space Economy,US,USD,0.01
+ILMN,Illumina Inc,Frontiera/Alternativi,Equity,Genomics,US,USD,0.01
+TXG,10x Genomics,Frontiera/Alternativi,Equity,Genomics,US,USD,0.005
+BTC-USD,Bitcoin,Frontiera/Alternativi,Crypto,Digital Assets,Global,USD,0.015
+ETH-USD,Ethereum,Frontiera/Alternativi,Crypto,Digital Assets,Global,USD,0.01
+REMX,VanEck Rare Earth/Strategic Metals ETF,Commodities & Terre Rare,Commodities,Rare Earth/Metals,Global,USD,0.02
+PICK,iShares MSCI Global Metals & Mining ETF,Commodities & Terre Rare,Commodities,Metals & Mining,Global,USD,0.02
+IEI,iShares 3-7Y Treasury Bond ETF,Fixed Income - Govt,Fixed Income,Government/Treasury,US,USD,0.1
+VCIT,Vanguard Interm-Term Corp Bond ETF,Fixed Income - IG,Fixed Income,Corporate IG,US,USD,0.1
+HYG,iShares iBoxx High Yield Corp ETF,Fixed Income - HY,Fixed Income,High Yield,US,USD,0.05
+CASH,Liquidita / Cash Equivalent,Liquidita,Liquidita,Cash,US,USD,0.16

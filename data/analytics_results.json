@@ -1,0 +1,277 @@
+{
+  "period": {
+    "start": "2026-05-11",
+    "end": "2026-09-04",
+    "years": 0.32
+  },
+  "performance": {
+    "total_return_pct": 4.22,
+    "annualized_return_pct": 13.91,
+    "annualized_volatility_pct": 10.52,
+    "sharpe_ratio": 0.942,
+    "sortino_ratio": 1.414,
+    "max_drawdown_pct": -3.69,
+    "max_drawdown_date": "2026-06-10"
+  },
+  "risk": {
+    "VaR_95_historical_daily_pct": -1.053,
+    "VaR_95_parametric_daily_pct": -1.039,
+    "VaR_99_historical_daily_pct": -1.42,
+    "VaR_99_parametric_daily_pct": -1.49
+  },
+  "cvar": {
+    "CVaR_95_daily_pct": -1.334,
+    "CVaR_99_daily_pct": -1.972
+  },
+  "asset_class_exposure": {
+    "Equity": 52.5,
+    "Fixed Income": 25.0,
+    "Liquidita": 16.0,
+    "Commodities": 4.0,
+    "Crypto": 2.5
+  },
+  "block_exposure": {
+    "Core Diversificato": 20.0,
+    "Tech Growth - Core": 20.0,
+    "Liquidita": 16.0,
+    "Tech Growth - Contorno": 10.0,
+    "Fixed Income - Govt": 10.0,
+    "Fixed Income - IG": 10.0,
+    "Fixed Income - HY": 5.0,
+    "Frontiera/Alternativi": 5.0,
+    "Commodities & Terre Rare": 4.0
+  },
+  "region_exposure": {
+    "US": 81.5,
+    "Europe": 9.5,
+    "Global": 6.5,
+    "Asia": 2.5
+  },
+  "currency_exposure": {
+    "USD": 94.5,
+    "EUR": 5.5
+  },
+  "concentration_risk": {
+    "hhi": 619.0,
+    "hhi_label": "Diversificato",
+    "top5_weight_pct": 45.0,
+    "top10_weight_pct": 61.5
+  },
+  "block_attribution_pct": {
+    "Core Diversificato": 1.942,
+    "Frontiera/Alternativi": 1.588,
+    "Tech Growth - Core": 0.745,
+    "Tech Growth - Contorno": 0.665,
+    "Fixed Income - HY": 0.052,
+    "Liquidita": 0.0,
+    "Fixed Income - Govt": -0.052,
+    "Fixed Income - IG": -0.1,
+    "Commodities & Terre Rare": -0.617
+  },
+  "asset_class_attribution_pct": {
+    "Equity": 4.876,
+    "Crypto": 0.064,
+    "Liquidita": 0.0,
+    "Fixed Income": -0.1,
+    "Commodities": -0.617
+  },
+  "top_5_performers": [
+    {
+      "ticker": "TXG",
+      "name": "10x Genomics",
+      "block": "Frontiera/Alternativi",
+      "stock_return": 208.39
+    },
+    {
+      "ticker": "CRWD",
+      "name": "CrowdStrike Holdings",
+      "block": "Tech Growth - Contorno",
+      "stock_return": 58.57
+    },
+    {
+      "ticker": "ILMN",
+      "name": "Illumina Inc",
+      "block": "Frontiera/Alternativi",
+      "stock_return": 55.54
+    },
+    {
+      "ticker": "PANW",
+      "name": "Palo Alto Networks",
+      "block": "Tech Growth - Contorno",
+      "stock_return": 55.36
+    },
+    {
+      "ticker": "JNJ",
+      "name": "Johnson & Johnson",
+      "block": "Core Diversificato",
+      "stock_return": 27.09
+    }
+  ],
+  "bottom_5_performers": [
+    {
+      "ticker": "REMX",
+      "name": "VanEck Rare Earth/Strategic Metals ETF",
+      "block": "Commodities & Terre Rare",
+      "stock_return": -30.59
+    },
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings",
+      "block": "Tech Growth - Contorno",
+      "stock_return": -26.92
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc",
+      "block": "Tech Growth - Core",
+      "stock_return": -11.82
+    },
+    {
+      "ticker": "HON",
+      "name": "Honeywell International",
+      "block": "Core Diversificato",
+      "stock_return": -8.88
+    },
+    {
+      "ticker": "ARKX",
+      "name": "ARK Space Exploration ETF",
+      "block": "Frontiera/Alternativi",
+      "stock_return": -7.31
+    }
+  ],
+  "benchmark": {
+    "beta": 0.774,
+    "alpha_annualized_pct": 1.45,
+    "tracking_error_pct": 5.16,
+    "information_ratio": -0.198,
+    "benchmark_annualized_return_pct": 14.93
+  },
+  "rolling_metrics": [
+    {
+      "date": "2026-06-09",
+      "rolling_vol_pct": 11.43,
+      "rolling_sharpe": -1.807,
+      "rolling_beta": 0.829
+    },
+    {
+      "date": "2026-06-12",
+      "rolling_vol_pct": 13.63,
+      "rolling_sharpe": -1.236,
+      "rolling_beta": 0.848
+    },
+    {
+      "date": "2026-06-17",
+      "rolling_vol_pct": 13.34,
+      "rolling_sharpe": 1.35,
+      "rolling_beta": 0.767
+    },
+    {
+      "date": "2026-06-23",
+      "rolling_vol_pct": 13.18,
+      "rolling_sharpe": -0.834,
+      "rolling_beta": 0.719
+    },
+    {
+      "date": "2026-06-26",
+      "rolling_vol_pct": 12.83,
+      "rolling_sharpe": -1.643,
+      "rolling_beta": 0.717
+    },
+    {
+      "date": "2026-07-01",
+      "rolling_vol_pct": 13.39,
+      "rolling_sharpe": -0.786,
+      "rolling_beta": 0.719
+    },
+    {
+      "date": "2026-07-07",
+      "rolling_vol_pct": 11.12,
+      "rolling_sharpe": 2.451,
+      "rolling_beta": 0.691
+    },
+    {
+      "date": "2026-07-10",
+      "rolling_vol_pct": 10.55,
+      "rolling_sharpe": 4.874,
+      "rolling_beta": 0.705
+    },
+    {
+      "date": "2026-07-15",
+      "rolling_vol_pct": 8.71,
+      "rolling_sharpe": 0.663,
+      "rolling_beta": 0.66
+    },
+    {
+      "date": "2026-07-20",
+      "rolling_vol_pct": 8.97,
+      "rolling_sharpe": -0.897,
+      "rolling_beta": 0.766
+    },
+    {
+      "date": "2026-07-23",
+      "rolling_vol_pct": 8.69,
+      "rolling_sharpe": 1.432,
+      "rolling_beta": 0.708
+    },
+    {
+      "date": "2026-07-28",
+      "rolling_vol_pct": 8.28,
+      "rolling_sharpe": -0.297,
+      "rolling_beta": 0.712
+    },
+    {
+      "date": "2026-07-31",
+      "rolling_vol_pct": 11.81,
+      "rolling_sharpe": 0.415,
+      "rolling_beta": 0.855
+    },
+    {
+      "date": "2026-08-05",
+      "rolling_vol_pct": 12.07,
+      "rolling_sharpe": 4.224,
+      "rolling_beta": 0.762
+    },
+    {
+      "date": "2026-08-10",
+      "rolling_vol_pct": 11.63,
+      "rolling_sharpe": 6.158,
+      "rolling_beta": 0.756
+    },
+    {
+      "date": "2026-08-13",
+      "rolling_vol_pct": 11.01,
+      "rolling_sharpe": 6.209,
+      "rolling_beta": 0.72
+    },
+    {
+      "date": "2026-08-18",
+      "rolling_vol_pct": 11.11,
+      "rolling_sharpe": 4.222,
+      "rolling_beta": 0.748
+    },
+    {
+      "date": "2026-08-21",
+      "rolling_vol_pct": 11.26,
+      "rolling_sharpe": 4.58,
+      "rolling_beta": 0.801
+    },
+    {
+      "date": "2026-08-26",
+      "rolling_vol_pct": 9.8,
+      "rolling_sharpe": 9.19,
+      "rolling_beta": 0.776
+    },
+    {
+      "date": "2026-08-31",
+      "rolling_vol_pct": 7.45,
+      "rolling_sharpe": 1.762,
+      "rolling_beta": 0.681
+    },
+    {
+      "date": "2026-09-03",
+      "rolling_vol_pct": 8.35,
+      "rolling_sharpe": -0.096,
+      "rolling_beta": 0.845
+    }
+  ]
+}
