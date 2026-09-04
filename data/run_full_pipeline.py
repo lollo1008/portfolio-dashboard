@@ -111,26 +111,59 @@ print(f"[1/6] positions.csv creato: {len(positions_df)} posizioni, peso totale {
 # =========================================================================
 # 2) DOWNLOAD PREZZI DA YAHOO FINANCE
 # =========================================================================
+import time
+
 print(f"\n[2/6] Download prezzi da Yahoo Finance ({START_DATE} -> {END_DATE})...")
 all_records = []
 failed = []
+
+def download_one(ticker, start, end, max_retries=3):
+    """Scarica un ticker con retry e fallback. I server cloud (come GitHub Actions)
+    sono spesso limitati piu' aggressivamente da Yahoo Finance rispetto a un PC normale."""
+    for attempt in range(max_retries):
+        try:
+            data = yf.download(ticker, start=start, end=end, progress=False, auto_adjust=True, threads=False)
+            if data.empty:
+                data = yf.Ticker(ticker).history(start=start, end=end, auto_adjust=True)
+            if data.empty:
+                time.sleep(2.5)
+                continue
+            if isinstance(data.columns, pd.MultiIndex):
+                if "Close" in data.columns.get_level_values(0):
+                    close_col = data["Close"]
+                    if isinstance(close_col, pd.DataFrame):
+                        close_col = close_col.iloc[:, 0]
+                else:
+                    close_col = data.iloc[:, 0]
+            else:
+                close_col = data["Close"] if "Close" in data.columns else data.iloc[:, 0]
+            return close_col
+        except Exception as e:
+            if attempt == max_retries - 1:
+                raise e
+            time.sleep(2.5)
+    return pd.Series(dtype=float)
 
 for ticker, name, block, asset_class, theme, region, ccy, weight in PORTFOLIO:
     if ticker == "CASH":
         continue
     try:
-        data = yf.download(ticker, start=START_DATE, end=END_DATE, progress=False, auto_adjust=True)
-        if data.empty:
+        close_col = download_one(ticker, START_DATE, END_DATE)
+        if close_col is None or close_col.empty:
+            print(f"  VUOTO {ticker:10s} - nessun dato restituito")
             failed.append(ticker)
+            time.sleep(1.0)
             continue
-        close_col = data["Close"] if "Close" in data.columns else data.iloc[:, 0]
+        n_rows = 0
         for dt, price in close_col.items():
             if pd.notna(price):
-                all_records.append((dt.strftime("%Y-%m-%d"), ticker, round(float(price), 4)))
-        print(f"  OK  {ticker:10s} - {len(close_col)} righe")
+                all_records.append((pd.Timestamp(dt).strftime("%Y-%m-%d"), ticker, round(float(price), 4)))
+                n_rows += 1
+        print(f"  OK  {ticker:10s} - {n_rows} righe")
     except Exception as e:
         print(f"  ERRORE {ticker}: {e}")
         failed.append(ticker)
+    time.sleep(1.0)  # pausa generosa tra le richieste (contesto cloud = piu' rate limiting)
 
 # Liquidita': NAV costante a 100 (cash puro, nessuna serie di prezzo)
 dates_ref = pd.bdate_range(start=START_DATE, end=END_DATE)
@@ -273,7 +306,7 @@ total_return = nav["nav"].iloc[-1] / nav["nav"].iloc[0] - 1
 n_years = (nav.index[-1] - nav.index[0]).days / 365.25
 annualized_return = (1 + total_return) ** (1 / n_years) - 1
 annualized_vol = daily_returns.std() * np.sqrt(TRADING_DAYS)
-sharpe_ratio = (annualized_return - RISK_FREE_RATE) / annualized_vol
+sharpe_ratio = (annualized_return - RISK_FREE_RATE) / annualized_vol if annualized_vol > 0 else float("nan")
 downside_vol = daily_returns[daily_returns < 0].std() * np.sqrt(TRADING_DAYS)
 sortino_ratio = (annualized_return - RISK_FREE_RATE) / downside_vol if downside_vol > 0 else np.nan
 cum_max = nav["nav"].cummax()
@@ -359,9 +392,17 @@ except Exception as e:
     print(f"  Nota: benchmark non disponibile per Alpha/Beta/TE/IR ({e})")
 
 # --- Correlazione (Top 10 per peso) ---
-top10_tickers = positions.sort_values("target_weight", ascending=False).head(10)["ticker"].tolist()
-corr_matrix = returns_matrix[top10_tickers].corr().round(3)
-corr_matrix.to_csv(f"{OUTPUT_DIR}/correlation_matrix_top10.csv")
+top10_tickers_raw = positions.sort_values("target_weight", ascending=False).head(10)["ticker"].tolist()
+top10_tickers = [t for t in top10_tickers_raw if t in returns_matrix.columns]
+missing_from_corr = [t for t in top10_tickers_raw if t not in returns_matrix.columns]
+if missing_from_corr:
+    print(f"ATTENZIONE - questi ticker top10 non hanno dati prezzo: {missing_from_corr}")
+if top10_tickers:
+    corr_matrix = returns_matrix[top10_tickers].corr().round(3)
+    corr_matrix.to_csv(f"{OUTPUT_DIR}/correlation_matrix_top10.csv")
+else:
+    print("Nessun ticker disponibile per la matrice di correlazione.")
+    corr_matrix = pd.DataFrame()
 
 results = {
     "period": {"start": str(nav.index[0].date()), "end": str(nav.index[-1].date()), "years": round(n_years, 2)},
