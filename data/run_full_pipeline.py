@@ -450,6 +450,13 @@ nav_export = pd.read_sql("SELECT * FROM v_portfolio_nav ORDER BY date", conn)
 nav_export["daily_return"] = nav_export["nav"].pct_change()
 nav_export["cumulative_return_pct"] = (nav_export["nav"] / nav_export["nav"].iloc[0] - 1) * 100
 nav_export["drawdown_pct"] = (nav_export["nav"] / nav_export["nav"].cummax() - 1) * 100
+
+bench_export = pd.read_csv(f"{OUTPUT_DIR}/benchmark.csv")
+bench_export["date"] = pd.to_datetime(bench_export["date"]).dt.strftime("%Y-%m-%d")
+bench_export["benchmark_return"] = bench_export["close"].pct_change()
+bench_export = bench_export.rename(columns={"close": "benchmark_close"})
+nav_export = nav_export.merge(bench_export[["date", "benchmark_close", "benchmark_return"]], on="date", how="left")
+
 nav_export.to_csv(f"{POWERBI_DIR}/fact_portfolio_nav.csv", index=False)
 
 for view, fname in [
