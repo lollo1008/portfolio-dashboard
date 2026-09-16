@@ -470,7 +470,9 @@ bench_export["date"] = pd.to_datetime(bench_export["date"]).dt.strftime("%Y-%m-%
 bench_export["benchmark_return"] = bench_export["close"].pct_change()
 bench_export = bench_export.rename(columns={"close": "benchmark_close"})
 nav_export = nav_export.merge(bench_export[["date", "benchmark_close", "benchmark_return"]], on="date", how="left")
-
+vix_export = pd.read_csv(f"{OUTPUT_DIR}/vix.csv")
+vix_export["date"] = pd.to_datetime(vix_export["date"]).dt.strftime("%Y-%m-%d")
+nav_export = nav_export.merge(vix_export[["date", "vix_close"]], on="date", how="left")
 nav_export.to_csv(f"{POWERBI_DIR}/fact_portfolio_nav.csv", index=False)
 
 for view, fname in [
