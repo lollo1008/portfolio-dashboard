@@ -209,6 +209,20 @@ benchmark_df.to_csv(f"{OUTPUT_DIR}/benchmark.csv", index=False)
 print(f"benchmark.csv creato: {len(benchmark_df)} righe")
 
 # =========================================================================
+# 3b) DOWNLOAD VIX (indice di volatilità)
+# =========================================================================
+VIX_TICKER = "^VIX"
+print(f"\nDownload {VIX_TICKER}...")
+vix_data = yf.download(VIX_TICKER, start=START_DATE, end=END_DATE, progress=False, auto_adjust=True)
+vix_close = vix_data["Close"] if "Close" in vix_data.columns else vix_data.iloc[:, 0]
+vix_df = pd.DataFrame({
+    "date": [d.strftime("%Y-%m-%d") for d in vix_close.index],
+    "vix_close": vix_close.values.flatten(),
+})
+vix_df.to_csv(f"{OUTPUT_DIR}/vix.csv", index=False)
+print(f"vix.csv creato: {len(vix_df)} righe")
+
+# =========================================================================
 # 4) COSTRUZIONE DATABASE SQL
 # =========================================================================
 print("\n[4/6] Costruzione database SQL...")
