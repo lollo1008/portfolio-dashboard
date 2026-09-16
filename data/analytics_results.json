@@ -1,23 +1,23 @@
 {
   "period": {
     "start": "2026-05-11",
-    "end": "2026-09-15",
+    "end": "2026-09-16",
     "years": 0.35
   },
   "performance": {
-    "total_return_pct": 2.69,
-    "annualized_return_pct": 7.94,
-    "annualized_volatility_pct": 10.31,
-    "sharpe_ratio": 0.382,
-    "sortino_ratio": 0.576,
+    "total_return_pct": 2.7,
+    "annualized_return_pct": 7.9,
+    "annualized_volatility_pct": 10.25,
+    "sharpe_ratio": 0.38,
+    "sortino_ratio": 0.57,
     "max_drawdown_pct": -3.69,
     "max_drawdown_date": "2026-06-10"
   },
   "risk": {
     "VaR_95_historical_daily_pct": -1.05,
-    "VaR_95_parametric_daily_pct": -1.037,
-    "VaR_99_historical_daily_pct": -1.373,
-    "VaR_99_parametric_daily_pct": -1.48
+    "VaR_95_parametric_daily_pct": -1.032,
+    "VaR_99_historical_daily_pct": -1.367,
+    "VaR_99_parametric_daily_pct": -1.472
   },
   "cvar": {
     "CVaR_95_daily_pct": -1.334,
@@ -58,53 +58,53 @@
     "top10_weight_pct": 61.5
   },
   "block_attribution_pct": {
-    "Frontiera/Alternativi": 1.587,
-    "Core Diversificato": 1.177,
-    "Tech Growth - Contorno": 0.758,
-    "Tech Growth - Core": 0.398,
-    "Fixed Income - HY": 0.009,
+    "Frontiera/Alternativi": 1.69,
+    "Core Diversificato": 1.201,
+    "Tech Growth - Contorno": 0.83,
+    "Tech Growth - Core": 0.246,
     "Liquidita": 0.0,
-    "Fixed Income - Govt": -0.16,
-    "Fixed Income - IG": -0.223,
-    "Commodities & Terre Rare": -0.855
+    "Fixed Income - HY": -0.001,
+    "Fixed Income - Govt": -0.167,
+    "Fixed Income - IG": -0.226,
+    "Commodities & Terre Rare": -0.873
   },
   "asset_class_attribution_pct": {
-    "Equity": 3.912,
-    "Crypto": 0.009,
+    "Equity": 4.054,
     "Liquidita": 0.0,
-    "Fixed Income": -0.374,
-    "Commodities": -0.855
+    "Crypto": -0.087,
+    "Fixed Income": -0.394,
+    "Commodities": -0.873
   },
   "top_5_performers": [
     {
       "ticker": "TXG",
       "name": "10x Genomics",
       "block": "Frontiera/Alternativi",
-      "stock_return": 242.0
-    },
-    {
-      "ticker": "PANW",
-      "name": "Palo Alto Networks",
-      "block": "Tech Growth - Contorno",
-      "stock_return": 75.02
+      "stock_return": 262.88
     },
     {
       "ticker": "CRWD",
       "name": "CrowdStrike Holdings",
       "block": "Tech Growth - Contorno",
-      "stock_return": 73.63
+      "stock_return": 78.87
+    },
+    {
+      "ticker": "PANW",
+      "name": "Palo Alto Networks",
+      "block": "Tech Growth - Contorno",
+      "stock_return": 75.55
     },
     {
       "ticker": "ILMN",
       "name": "Illumina Inc",
       "block": "Frontiera/Alternativi",
-      "stock_return": 46.1
+      "stock_return": 55.98
     },
     {
-      "ticker": "MSFT",
-      "name": "Microsoft Corp",
-      "block": "Tech Growth - Core",
-      "stock_return": 22.97
+      "ticker": "JNJ",
+      "name": "Johnson & Johnson",
+      "block": "Core Diversificato",
+      "stock_return": 21.96
     }
   ],
   "bottom_5_performers": [
@@ -112,39 +112,39 @@
       "ticker": "REMX",
       "name": "VanEck Rare Earth/Strategic Metals ETF",
       "block": "Commodities & Terre Rare",
-      "stock_return": -37.07
+      "stock_return": -37.64
     },
     {
       "ticker": "VRT",
       "name": "Vertiv Holdings",
       "block": "Tech Growth - Contorno",
-      "stock_return": -35.45
-    },
-    {
-      "ticker": "HON",
-      "name": "Honeywell International",
-      "block": "Core Diversificato",
-      "stock_return": -11.62
+      "stock_return": -36.2
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet Inc",
       "block": "Tech Growth - Core",
-      "stock_return": -9.99
+      "stock_return": -11.12
+    },
+    {
+      "ticker": "HON",
+      "name": "Honeywell International",
+      "block": "Core Diversificato",
+      "stock_return": -10.72
     },
     {
       "ticker": "ARKX",
       "name": "ARK Space Exploration ETF",
       "block": "Frontiera/Alternativi",
-      "stock_return": -9.31
+      "stock_return": -9.71
     }
   ],
   "benchmark": {
-    "beta": 0.77,
-    "alpha_annualized_pct": 0.54,
-    "tracking_error_pct": 5.2,
-    "information_ratio": -0.091,
-    "benchmark_annualized_return_pct": 8.41
+    "beta": 0.767,
+    "alpha_annualized_pct": 1.67,
+    "tracking_error_pct": 5.23,
+    "information_ratio": 0.19,
+    "benchmark_annualized_return_pct": 6.91
   },
   "rolling_metrics": [
     {
