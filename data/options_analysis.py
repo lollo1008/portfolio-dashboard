@@ -235,6 +235,20 @@ def max_pain(oi: pd.DataFrame) -> float:
 # One expiry, end to end
 # --------------------------------------------------------------------------- #
 
+def _diagnose(calls, puts, calls_c, puts_c, spot, F, f_src, T, r, p):
+    """One-line account of where the strikes were lost (printed when an expiry is skipped)."""
+    def n(df, col, cond):
+        return int(cond(pd.to_numeric(df[col], errors="coerce").fillna(0)).sum()) if col in df else -1
+    ivs = [implied_vol(x.mid, F, x.strike, T, r, "c" if x.strike >= F else "p")
+           for df in (calls_c, puts_c) for _, x in df.iterrows()]
+    n_iv = int(np.isfinite(ivs).sum())
+    return (f"spot={spot:.2f} F={F:.2f}({f_src}) raw calls/puts={len(calls)}/{len(puts)} "
+            f"bid>0={n(calls,'bid',lambda x:x>0)}/{n(puts,'bid',lambda x:x>0)} "
+            f"last>0={n(calls,'lastPrice',lambda x:x>0)}/{n(puts,'lastPrice',lambda x:x>0)} "
+            f"OI>={p.min_oi}={n(calls,'openInterest',lambda x:x>=p.min_oi)}/{n(puts,'openInterest',lambda x:x>=p.min_oi)} "
+            f"after_mid={len(calls_c)}/{len(puts_c)} valid_iv={n_iv}")
+
+
 def analyze_expiry(calls, puts, spot, T, r, p: Params | None = None):
     """Returns (summary dict, smile df, density df, oi df) or (None, reason) on failure."""
     p = p or Params()
@@ -243,7 +257,7 @@ def analyze_expiry(calls, puts, spot, T, r, p: Params | None = None):
     F, f_src = forward_from_parity(calls_c, puts_c, spot, T, r)
     smile = build_smile(calls_c, puts_c, F, T, r, p)
     if len(smile) < p.min_strikes:
-        return None, f"only {len(smile)} usable strikes (< {p.min_strikes})"
+        return None, (f"only {len(smile)} usable strikes (< {p.min_strikes}) | " + _diagnose(calls, puts, calls_c, puts_c, spot, F, f_src, T, r, p))
 
     d = implied_density(smile.strike, smile.iv, F, T, r, p.smooth_frac, p.n_grid)
     K = d["K"]
