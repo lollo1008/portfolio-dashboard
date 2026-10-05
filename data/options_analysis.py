@@ -227,8 +227,8 @@ def oi_table(calls, puts) -> pd.DataFrame:
 
 def max_pain(oi: pd.DataFrame) -> float:
     """Expiry price that minimises the total intrinsic value paid to option holders."""
-    if float(oi.call_oi.sum() + oi.put_oi.sum()) <= 0:
-        return float('nan')          # no open interest reported -> undefined
+    if float(oi.call_oi.sum()) <= 0 or float(oi.put_oi.sum()) <= 0:
+        return float('nan')          # need OI on both sides, else the result is an artefact
     ks = oi.strike.values
     best_k, best_pay = np.nan, np.inf
     for k in ks:
@@ -292,17 +292,20 @@ def analyze_expiry(calls, puts, spot, T, r, p: Params | None = None):
         total_call_volume=float(oi.call_volume.sum()), total_put_volume=float(oi.put_volume.sum()),
         max_pain=max_pain(oi),
     )
-    s["oi_available"] = bool(s["total_call_oi"] + s["total_put_oi"] > 0)
+    s["oi_available"] = bool(s["total_call_oi"] > 0 and s["total_put_oi"] > 0)
     s["oi_filter_applied"] = bool(smile.oi_filter_applied.iloc[0])
     s["quote_quality"] = "live" if s["share_last_price"] < 0.5 else "stale_last_prices"
     s["iv_skew_90_110"] = s["iv_90pct"] - s["iv_110pct"]
-    s["put_call_oi_ratio"] = s["total_put_oi"] / s["total_call_oi"] if s["total_call_oi"] else np.nan
+    s["put_call_oi_ratio"] = (s["total_put_oi"] / s["total_call_oi"]
+                              if s["oi_available"] else np.nan)
     s["put_call_volume_ratio"] = (s["total_put_volume"] / s["total_call_volume"]
                                   if s["total_call_volume"] else np.nan)
     above = oi[oi.strike >= spot]
     below = oi[oi.strike <= spot]
-    s["call_oi_wall"] = float(above.loc[above.call_oi.idxmax(), "strike"]) if len(above) else np.nan
-    s["put_oi_wall"] = float(below.loc[below.put_oi.idxmax(), "strike"]) if len(below) else np.nan
+    s["call_oi_wall"] = (float(above.loc[above.call_oi.idxmax(), "strike"])
+                         if len(above) and above.call_oi.max() > 0 else np.nan)
+    s["put_oi_wall"] = (float(below.loc[below.put_oi.idxmax(), "strike"])
+                        if len(below) and below.put_oi.max() > 0 else np.nan)
 
     # market-implied probabilities of moves vs the lognormal benchmark
     for pct in (5, 10, 15):
