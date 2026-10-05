@@ -100,3 +100,8 @@ date,year,month,month_name,quarter,year_month,weekday
 2026-09-24,2026,9,Sep,3,2026-09,Thursday
 2026-09-25,2026,9,Sep,3,2026-09,Friday
 2026-09-28,2026,9,Sep,3,2026-09,Monday
+2026-09-29,2026,9,Sep,3,2026-09,Tuesday
+2026-09-30,2026,9,Sep,3,2026-09,Wednesday
+2026-10-01,2026,10,Oct,4,2026-10,Thursday
+2026-10-02,2026,10,Oct,4,2026-10,Friday
+2026-10-05,2026,10,Oct,4,2026-10,Monday
