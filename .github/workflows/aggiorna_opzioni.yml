@@ -1,0 +1,36 @@
+name: Aggiornamento Opzioni (open interest + Breeden-Litzenberger)
+
+# Workflow separato da quello dei prezzi: gira a mercato USA aperto
+# (16:00 UTC = 18:00 Italia), quando Yahoo ha bid/ask live.
+# Scrive in data/powerbi/fact_options_*.csv
+
+on:
+  schedule:
+    - cron: "0 16 * * 1"
+  workflow_dispatch:
+
+jobs:
+  opzioni:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installa dipendenze
+        run: pip install yfinance pandas numpy scipy
+      - name: Test sintetici (la matematica deve passare prima di scrivere dati)
+        run: python tests/test_options_analysis.py
+      - name: Analisi opzioni
+        run: python options_analysis.py --tickers SPY --target-dte 30 60 90 --outdir powerbi
+        working-directory: ./data
+      - name: Commit e push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/powerbi/fact_options_*.csv
+          git diff --staged --quiet || git commit -m "Snapshot opzioni $(date +'%Y-%m-%d')"
+          git pull --rebase
+          git push
