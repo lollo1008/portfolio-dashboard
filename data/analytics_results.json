@@ -1,23 +1,23 @@
 {
   "period": {
     "start": "2026-05-11",
-    "end": "2026-10-12",
-    "years": 0.42
+    "end": "2026-10-19",
+    "years": 0.44
   },
   "performance": {
-    "total_return_pct": 4.57,
-    "annualized_return_pct": 11.18,
-    "annualized_volatility_pct": 10.06,
-    "sharpe_ratio": 0.714,
-    "sortino_ratio": 1.085,
+    "total_return_pct": 2.02,
+    "annualized_return_pct": 4.65,
+    "annualized_volatility_pct": 10.05,
+    "sharpe_ratio": 0.065,
+    "sortino_ratio": 0.101,
     "max_drawdown_pct": -3.69,
     "max_drawdown_date": "2026-06-10"
   },
   "risk": {
-    "VaR_95_historical_daily_pct": -0.969,
-    "VaR_95_parametric_daily_pct": -1.0,
-    "VaR_99_historical_daily_pct": -1.299,
-    "VaR_99_parametric_daily_pct": -1.431
+    "VaR_95_historical_daily_pct": -0.967,
+    "VaR_95_parametric_daily_pct": -1.022,
+    "VaR_99_historical_daily_pct": -1.295,
+    "VaR_99_parametric_daily_pct": -1.453
   },
   "cvar": {
     "CVaR_95_daily_pct": -1.286,
@@ -58,53 +58,53 @@
     "top10_weight_pct": 61.5
   },
   "block_attribution_pct": {
-    "Frontiera/Alternativi": 2.419,
-    "Tech Growth - Core": 1.831,
-    "Tech Growth - Contorno": 1.585,
-    "Core Diversificato": 0.348,
+    "Frontiera/Alternativi": 1.932,
+    "Core Diversificato": 0.859,
+    "Tech Growth - Core": 0.675,
+    "Tech Growth - Contorno": 0.256,
     "Liquidita": 0.0,
-    "Fixed Income - HY": -0.052,
-    "Fixed Income - Govt": -0.211,
-    "Fixed Income - IG": -0.319,
-    "Commodities & Terre Rare": -1.031
+    "Fixed Income - HY": -0.076,
+    "Fixed Income - Govt": -0.146,
+    "Fixed Income - IG": -0.247,
+    "Commodities & Terre Rare": -1.229
   },
   "asset_class_attribution_pct": {
-    "Equity": 6.106,
-    "Crypto": 0.077,
+    "Equity": 3.692,
+    "Crypto": 0.03,
     "Liquidita": 0.0,
-    "Fixed Income": -0.583,
-    "Commodities": -1.031
+    "Fixed Income": -0.469,
+    "Commodities": -1.229
   },
   "top_5_performers": [
     {
       "ticker": "TXG",
       "name": "10x Genomics",
       "block": "Frontiera/Alternativi",
-      "stock_return": 293.41
-    },
-    {
-      "ticker": "CRWD",
-      "name": "CrowdStrike Holdings",
-      "block": "Tech Growth - Contorno",
-      "stock_return": 102.88
-    },
-    {
-      "ticker": "PANW",
-      "name": "Palo Alto Networks",
-      "block": "Tech Growth - Contorno",
-      "stock_return": 96.0
+      "stock_return": 240.78
     },
     {
       "ticker": "ILMN",
       "name": "Illumina Inc",
       "block": "Frontiera/Alternativi",
-      "stock_return": 95.19
+      "stock_return": 84.23
     },
     {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices",
+      "ticker": "CRWD",
+      "name": "CrowdStrike Holdings",
+      "block": "Tech Growth - Contorno",
+      "stock_return": 67.74
+    },
+    {
+      "ticker": "PANW",
+      "name": "Palo Alto Networks",
+      "block": "Tech Growth - Contorno",
+      "stock_return": 60.07
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft Corp",
       "block": "Tech Growth - Core",
-      "stock_return": 32.54
+      "stock_return": 28.72
     }
   ],
   "bottom_5_performers": [
@@ -112,39 +112,39 @@
       "ticker": "REMX",
       "name": "VanEck Rare Earth/Strategic Metals ETF",
       "block": "Commodities & Terre Rare",
-      "stock_return": -44.33
+      "stock_return": -50.49
     },
     {
       "ticker": "VRT",
       "name": "Vertiv Holdings",
       "block": "Tech Growth - Contorno",
-      "stock_return": -33.98
+      "stock_return": -43.87
     },
     {
       "ticker": "NVO",
       "name": "Novo Nordisk",
       "block": "Core Diversificato",
-      "stock_return": -15.66
+      "stock_return": -15.25
     },
     {
-      "ticker": "NOC",
-      "name": "Northrop Grumman",
-      "block": "Core Diversificato",
-      "stock_return": -11.52
+      "ticker": "ARKX",
+      "name": "ARK Space Exploration ETF",
+      "block": "Frontiera/Alternativi",
+      "stock_return": -14.4
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet Inc",
       "block": "Tech Growth - Core",
-      "stock_return": -9.4
+      "stock_return": -12.25
     }
   ],
   "benchmark": {
     "beta": 0.765,
-    "alpha_annualized_pct": -0.01,
+    "alpha_annualized_pct": -2.24,
     "tracking_error_pct": 5.3,
-    "information_ratio": -0.419,
-    "benchmark_annualized_return_pct": 13.4
+    "information_ratio": -0.592,
+    "benchmark_annualized_return_pct": 7.79
   },
   "rolling_metrics": [
     {
@@ -320,6 +320,18 @@
       "rolling_vol_pct": 8.29,
       "rolling_sharpe": 1.26,
       "rolling_beta": 0.671
+    },
+    {
+      "date": "2026-10-13",
+      "rolling_vol_pct": 9.11,
+      "rolling_sharpe": 0.927,
+      "rolling_beta": 0.786
+    },
+    {
+      "date": "2026-10-16",
+      "rolling_vol_pct": 9.11,
+      "rolling_sharpe": -2.745,
+      "rolling_beta": 0.741
     }
   ]
 }
