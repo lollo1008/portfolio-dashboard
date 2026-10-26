@@ -1,26 +1,26 @@
 {
   "period": {
     "start": "2026-05-11",
-    "end": "2026-10-19",
-    "years": 0.44
+    "end": "2026-10-26",
+    "years": 0.46
   },
   "performance": {
     "total_return_pct": 2.02,
-    "annualized_return_pct": 4.65,
-    "annualized_volatility_pct": 10.05,
-    "sharpe_ratio": 0.065,
-    "sortino_ratio": 0.101,
+    "annualized_return_pct": 4.44,
+    "annualized_volatility_pct": 10.04,
+    "sharpe_ratio": 0.044,
+    "sortino_ratio": 0.067,
     "max_drawdown_pct": -3.69,
     "max_drawdown_date": "2026-06-10"
   },
   "risk": {
-    "VaR_95_historical_daily_pct": -0.967,
+    "VaR_95_historical_daily_pct": -1.046,
     "VaR_95_parametric_daily_pct": -1.022,
-    "VaR_99_historical_daily_pct": -1.295,
+    "VaR_99_historical_daily_pct": -1.291,
     "VaR_99_parametric_daily_pct": -1.453
   },
   "cvar": {
-    "CVaR_95_daily_pct": -1.286,
+    "CVaR_95_daily_pct": -1.304,
     "CVaR_99_daily_pct": -1.639
   },
   "asset_class_exposure": {
@@ -58,53 +58,53 @@
     "top10_weight_pct": 61.5
   },
   "block_attribution_pct": {
-    "Frontiera/Alternativi": 1.932,
-    "Core Diversificato": 0.859,
-    "Tech Growth - Core": 0.675,
-    "Tech Growth - Contorno": 0.256,
+    "Frontiera/Alternativi": 1.998,
+    "Core Diversificato": 0.987,
+    "Tech Growth - Contorno": 0.498,
+    "Tech Growth - Core": 0.307,
     "Liquidita": 0.0,
-    "Fixed Income - HY": -0.076,
-    "Fixed Income - Govt": -0.146,
-    "Fixed Income - IG": -0.247,
-    "Commodities & Terre Rare": -1.229
+    "Fixed Income - HY": -0.064,
+    "Fixed Income - Govt": -0.109,
+    "Fixed Income - IG": -0.216,
+    "Commodities & Terre Rare": -1.381
   },
   "asset_class_attribution_pct": {
-    "Equity": 3.692,
-    "Crypto": 0.03,
+    "Equity": 3.783,
+    "Crypto": 0.007,
     "Liquidita": 0.0,
-    "Fixed Income": -0.469,
-    "Commodities": -1.229
+    "Fixed Income": -0.389,
+    "Commodities": -1.381
   },
   "top_5_performers": [
     {
       "ticker": "TXG",
       "name": "10x Genomics",
       "block": "Frontiera/Alternativi",
-      "stock_return": 240.78
-    },
-    {
-      "ticker": "ILMN",
-      "name": "Illumina Inc",
-      "block": "Frontiera/Alternativi",
-      "stock_return": 84.23
+      "stock_return": 249.02
     },
     {
       "ticker": "CRWD",
       "name": "CrowdStrike Holdings",
       "block": "Tech Growth - Contorno",
-      "stock_return": 67.74
+      "stock_return": 90.0
+    },
+    {
+      "ticker": "ILMN",
+      "name": "Illumina Inc",
+      "block": "Frontiera/Alternativi",
+      "stock_return": 89.05
     },
     {
       "ticker": "PANW",
       "name": "Palo Alto Networks",
       "block": "Tech Growth - Contorno",
-      "stock_return": 60.07
+      "stock_return": 78.11
     },
     {
       "ticker": "MSFT",
       "name": "Microsoft Corp",
       "block": "Tech Growth - Core",
-      "stock_return": 28.72
+      "stock_return": 27.62
     }
   ],
   "bottom_5_performers": [
@@ -112,39 +112,39 @@
       "ticker": "REMX",
       "name": "VanEck Rare Earth/Strategic Metals ETF",
       "block": "Commodities & Terre Rare",
-      "stock_return": -50.49
+      "stock_return": -53.02
     },
     {
       "ticker": "VRT",
       "name": "Vertiv Holdings",
       "block": "Tech Growth - Contorno",
-      "stock_return": -43.87
-    },
-    {
-      "ticker": "NVO",
-      "name": "Novo Nordisk",
-      "block": "Core Diversificato",
-      "stock_return": -15.25
-    },
-    {
-      "ticker": "ARKX",
-      "name": "ARK Space Exploration ETF",
-      "block": "Frontiera/Alternativi",
-      "stock_return": -14.4
+      "stock_return": -47.16
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet Inc",
       "block": "Tech Growth - Core",
-      "stock_return": -12.25
+      "stock_return": -17.51
+    },
+    {
+      "ticker": "PICK",
+      "name": "iShares MSCI Global Metals & Mining ETF",
+      "block": "Commodities & Terre Rare",
+      "stock_return": -16.02
+    },
+    {
+      "ticker": "NVO",
+      "name": "Novo Nordisk",
+      "block": "Core Diversificato",
+      "stock_return": -14.77
     }
   ],
   "benchmark": {
-    "beta": 0.765,
-    "alpha_annualized_pct": -2.24,
-    "tracking_error_pct": 5.3,
-    "information_ratio": -0.592,
-    "benchmark_annualized_return_pct": 7.79
+    "beta": 0.764,
+    "alpha_annualized_pct": -1.34,
+    "tracking_error_pct": 5.34,
+    "information_ratio": -0.355,
+    "benchmark_annualized_return_pct": 6.34
   },
   "rolling_metrics": [
     {
@@ -332,6 +332,12 @@
       "rolling_vol_pct": 9.11,
       "rolling_sharpe": -2.745,
       "rolling_beta": 0.741
+    },
+    {
+      "date": "2026-10-21",
+      "rolling_vol_pct": 8.42,
+      "rolling_sharpe": -2.06,
+      "rolling_beta": 0.757
     }
   ]
 }
