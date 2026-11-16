@@ -1,27 +1,27 @@
 {
   "period": {
     "start": "2026-05-11",
-    "end": "2026-11-09",
-    "years": 0.5
+    "end": "2026-11-16",
+    "years": 0.52
   },
   "performance": {
-    "total_return_pct": -0.44,
-    "annualized_return_pct": -0.87,
-    "annualized_volatility_pct": 11.32,
-    "sharpe_ratio": -0.43,
-    "sortino_ratio": -0.543,
-    "max_drawdown_pct": -5.98,
+    "total_return_pct": 0.39,
+    "annualized_return_pct": 0.76,
+    "annualized_volatility_pct": 11.46,
+    "sharpe_ratio": -0.282,
+    "sortino_ratio": -0.37,
+    "max_drawdown_pct": -5.88,
     "max_drawdown_date": "2026-11-05"
   },
   "risk": {
-    "VaR_95_historical_daily_pct": -1.087,
-    "VaR_95_parametric_daily_pct": -1.174,
+    "VaR_95_historical_daily_pct": -1.072,
+    "VaR_95_parametric_daily_pct": -1.182,
     "VaR_99_historical_daily_pct": -1.97,
-    "VaR_99_parametric_daily_pct": -1.66
+    "VaR_99_parametric_daily_pct": -1.674
   },
   "cvar": {
-    "CVaR_95_daily_pct": -1.709,
-    "CVaR_99_daily_pct": -2.599
+    "CVaR_95_daily_pct": -1.708,
+    "CVaR_99_daily_pct": -2.597
   },
   "asset_class_exposure": {
     "Equity": 52.5,
@@ -58,53 +58,53 @@
     "top10_weight_pct": 61.5
   },
   "block_attribution_pct": {
-    "Core Diversificato": 1.228,
-    "Frontiera/Alternativi": 1.101,
+    "Core Diversificato": 2.083,
+    "Frontiera/Alternativi": 0.786,
+    "Tech Growth - Contorno": 0.122,
     "Liquidita": 0.0,
-    "Fixed Income - HY": -0.052,
-    "Fixed Income - Govt": -0.056,
-    "Fixed Income - IG": -0.152,
-    "Tech Growth - Contorno": -0.294,
-    "Tech Growth - Core": -0.805,
-    "Commodities & Terre Rare": -1.406
+    "Fixed Income - HY": -0.045,
+    "Fixed Income - Govt": -0.152,
+    "Fixed Income - IG": -0.249,
+    "Tech Growth - Core": -0.713,
+    "Commodities & Terre Rare": -1.437
   },
   "asset_class_attribution_pct": {
-    "Equity": 1.385,
+    "Equity": 2.701,
     "Liquidita": 0.0,
-    "Crypto": -0.154,
-    "Fixed Income": -0.26,
-    "Commodities": -1.406
+    "Crypto": -0.423,
+    "Fixed Income": -0.446,
+    "Commodities": -1.437
   },
   "top_5_performers": [
     {
       "ticker": "TXG",
       "name": "10x Genomics",
       "block": "Frontiera/Alternativi",
-      "stock_return": 189.17
+      "stock_return": 183.85
     },
     {
       "ticker": "CRWD",
       "name": "CrowdStrike Holdings",
       "block": "Tech Growth - Contorno",
-      "stock_return": 60.0
-    },
-    {
-      "ticker": "ILMN",
-      "name": "Illumina Inc",
-      "block": "Frontiera/Alternativi",
-      "stock_return": 49.55
+      "stock_return": 67.16
     },
     {
       "ticker": "PANW",
       "name": "Palo Alto Networks",
       "block": "Tech Growth - Contorno",
-      "stock_return": 46.89
+      "stock_return": 50.82
     },
     {
-      "ticker": "MSFT",
-      "name": "Microsoft Corp",
-      "block": "Tech Growth - Core",
-      "stock_return": 29.1
+      "ticker": "ILMN",
+      "name": "Illumina Inc",
+      "block": "Frontiera/Alternativi",
+      "stock_return": 45.26
+    },
+    {
+      "ticker": "JNJ",
+      "name": "Johnson & Johnson",
+      "block": "Core Diversificato",
+      "stock_return": 30.43
     }
   ],
   "bottom_5_performers": [
@@ -112,39 +112,39 @@
       "ticker": "REMX",
       "name": "VanEck Rare Earth/Strategic Metals ETF",
       "block": "Commodities & Terre Rare",
-      "stock_return": -53.07
+      "stock_return": -54.33
     },
     {
       "ticker": "VRT",
       "name": "Vertiv Holdings",
       "block": "Tech Growth - Contorno",
-      "stock_return": -50.28
+      "stock_return": -45.05
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corp",
+      "block": "Tech Growth - Core",
+      "stock_return": -25.62
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet Inc",
       "block": "Tech Growth - Core",
-      "stock_return": -26.63
+      "stock_return": -23.8
     },
     {
-      "ticker": "ARKX",
-      "name": "ARK Space Exploration ETF",
+      "ticker": "ETH-USD",
+      "name": "Ethereum",
       "block": "Frontiera/Alternativi",
-      "stock_return": -18.57
-    },
-    {
-      "ticker": "ETN",
-      "name": "Eaton Corp",
-      "block": "Tech Growth - Contorno",
-      "stock_return": -18.24
+      "stock_return": -17.6
     }
   ],
   "benchmark": {
-    "beta": 0.773,
-    "alpha_annualized_pct": -1.03,
-    "tracking_error_pct": 5.59,
-    "information_ratio": 0.019,
-    "benchmark_annualized_return_pct": -0.98
+    "beta": 0.768,
+    "alpha_annualized_pct": -3.18,
+    "tracking_error_pct": 5.64,
+    "information_ratio": -0.561,
+    "benchmark_annualized_return_pct": 3.93
   },
   "rolling_metrics": [
     {
@@ -353,15 +353,21 @@
     },
     {
       "date": "2026-11-03",
-      "rolling_vol_pct": 12.71,
-      "rolling_sharpe": -3.058,
-      "rolling_beta": 1.009
+      "rolling_vol_pct": 12.65,
+      "rolling_sharpe": -3.008,
+      "rolling_beta": 1.005
     },
     {
       "date": "2026-11-06",
-      "rolling_vol_pct": 16.48,
-      "rolling_sharpe": -3.039,
-      "rolling_beta": 0.783
+      "rolling_vol_pct": 16.43,
+      "rolling_sharpe": -3.006,
+      "rolling_beta": 0.782
+    },
+    {
+      "date": "2026-11-11",
+      "rolling_vol_pct": 17.86,
+      "rolling_sharpe": -1.039,
+      "rolling_beta": 0.765
     }
   ]
 }
