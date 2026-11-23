@@ -1,27 +1,27 @@
 {
   "period": {
     "start": "2026-05-11",
-    "end": "2026-11-16",
-    "years": 0.52
+    "end": "2026-11-23",
+    "years": 0.54
   },
   "performance": {
-    "total_return_pct": 0.39,
-    "annualized_return_pct": 0.76,
-    "annualized_volatility_pct": 11.46,
-    "sharpe_ratio": -0.282,
-    "sortino_ratio": -0.37,
-    "max_drawdown_pct": -5.88,
-    "max_drawdown_date": "2026-11-05"
+    "total_return_pct": -5.0,
+    "annualized_return_pct": -9.11,
+    "annualized_volatility_pct": 12.05,
+    "sharpe_ratio": -1.088,
+    "sortino_ratio": -1.372,
+    "max_drawdown_pct": -9.94,
+    "max_drawdown_date": "2026-11-20"
   },
   "risk": {
-    "VaR_95_historical_daily_pct": -1.072,
-    "VaR_95_parametric_daily_pct": -1.182,
-    "VaR_99_historical_daily_pct": -1.97,
-    "VaR_99_parametric_daily_pct": -1.674
+    "VaR_95_historical_daily_pct": -1.158,
+    "VaR_95_parametric_daily_pct": -1.282,
+    "VaR_99_historical_daily_pct": -2.328,
+    "VaR_99_parametric_daily_pct": -1.799
   },
   "cvar": {
-    "CVaR_95_daily_pct": -1.708,
-    "CVaR_99_daily_pct": -2.597
+    "CVaR_95_daily_pct": -1.98,
+    "CVaR_99_daily_pct": -2.889
   },
   "asset_class_exposure": {
     "Equity": 52.5,
@@ -58,53 +58,53 @@
     "top10_weight_pct": 61.5
   },
   "block_attribution_pct": {
-    "Core Diversificato": 2.083,
-    "Frontiera/Alternativi": 0.786,
-    "Tech Growth - Contorno": 0.122,
+    "Core Diversificato": 0.638,
+    "Frontiera/Alternativi": 0.1,
     "Liquidita": 0.0,
-    "Fixed Income - HY": -0.045,
-    "Fixed Income - Govt": -0.152,
-    "Fixed Income - IG": -0.249,
-    "Tech Growth - Core": -0.713,
-    "Commodities & Terre Rare": -1.437
+    "Fixed Income - Govt": -0.032,
+    "Fixed Income - HY": -0.084,
+    "Fixed Income - IG": -0.165,
+    "Tech Growth - Contorno": -0.385,
+    "Commodities & Terre Rare": -1.813,
+    "Tech Growth - Core": -3.258
   },
   "asset_class_attribution_pct": {
-    "Equity": 2.701,
     "Liquidita": 0.0,
-    "Crypto": -0.423,
-    "Fixed Income": -0.446,
-    "Commodities": -1.437
+    "Fixed Income": -0.281,
+    "Crypto": -0.729,
+    "Commodities": -1.813,
+    "Equity": -2.175
   },
   "top_5_performers": [
     {
       "ticker": "TXG",
       "name": "10x Genomics",
       "block": "Frontiera/Alternativi",
-      "stock_return": 183.85
+      "stock_return": 152.68
     },
     {
       "ticker": "CRWD",
       "name": "CrowdStrike Holdings",
       "block": "Tech Growth - Contorno",
-      "stock_return": 67.16
+      "stock_return": 69.25
     },
     {
       "ticker": "PANW",
       "name": "Palo Alto Networks",
       "block": "Tech Growth - Contorno",
-      "stock_return": 50.82
+      "stock_return": 60.69
     },
     {
       "ticker": "ILMN",
       "name": "Illumina Inc",
       "block": "Frontiera/Alternativi",
-      "stock_return": 45.26
+      "stock_return": 35.3
     },
     {
       "ticker": "JNJ",
       "name": "Johnson & Johnson",
       "block": "Core Diversificato",
-      "stock_return": 30.43
+      "stock_return": 23.46
     }
   ],
   "bottom_5_performers": [
@@ -112,39 +112,39 @@
       "ticker": "REMX",
       "name": "VanEck Rare Earth/Strategic Metals ETF",
       "block": "Commodities & Terre Rare",
-      "stock_return": -54.33
+      "stock_return": -61.6
     },
     {
       "ticker": "VRT",
       "name": "Vertiv Holdings",
       "block": "Tech Growth - Contorno",
-      "stock_return": -45.05
+      "stock_return": -54.8
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corp",
       "block": "Tech Growth - Core",
-      "stock_return": -25.62
+      "stock_return": -42.66
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet Inc",
       "block": "Tech Growth - Core",
-      "stock_return": -23.8
+      "stock_return": -31.65
     },
     {
       "ticker": "ETH-USD",
       "name": "Ethereum",
       "block": "Frontiera/Alternativi",
-      "stock_return": -17.6
+      "stock_return": -30.77
     }
   ],
   "benchmark": {
-    "beta": 0.768,
-    "alpha_annualized_pct": -3.18,
-    "tracking_error_pct": 5.64,
-    "information_ratio": -0.561,
-    "benchmark_annualized_return_pct": 3.93
+    "beta": 0.749,
+    "alpha_annualized_pct": -0.92,
+    "tracking_error_pct": 6.02,
+    "information_ratio": 0.526,
+    "benchmark_annualized_return_pct": -12.28
   },
   "rolling_metrics": [
     {
@@ -368,6 +368,18 @@
       "rolling_vol_pct": 17.86,
       "rolling_sharpe": -1.039,
       "rolling_beta": 0.765
+    },
+    {
+      "date": "2026-11-16",
+      "rolling_vol_pct": 18.65,
+      "rolling_sharpe": -2.011,
+      "rolling_beta": 0.782
+    },
+    {
+      "date": "2026-11-19",
+      "rolling_vol_pct": 18.28,
+      "rolling_sharpe": -2.505,
+      "rolling_beta": 0.741
     }
   ]
 }
